@@ -6,16 +6,16 @@ public enum TTSControllerError: Error {
 }
 
 public class TTSController {
-    private var _availableVoices: [AVSpeechSynthesisVoice]
+    public var availableVoices: [AVSpeechSynthesisVoice]
     private var _currentVoice: AVSpeechSynthesisVoice?
     private var _synthesizer: AVSpeechSynthesizer
     private var _rate: Float
     
     public init(for language: String, with rate: Float = 0.5) {
-        _availableVoices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language.contains(language) }
+        availableVoices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language.contains(language) }
         _synthesizer = AVSpeechSynthesizer()
         _rate = rate
-        setVoice(_availableVoices.randomElement())
+        setVoice(availableVoices.randomElement())
     }
     
     public func speak(text: String, with voice: AVSpeechSynthesisVoice? = nil, at rate: Float? = nil) throws {
@@ -30,7 +30,7 @@ public class TTSController {
     }
     
     public func setLanguage(_ language: String) {
-        _availableVoices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language.contains(language) }
+        availableVoices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language.contains(language) }
     }
     
     public func setVoice(_ voice: AVSpeechSynthesisVoice?) {
