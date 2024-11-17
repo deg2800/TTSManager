@@ -36,4 +36,16 @@ public class TTSController {
     public func setVoice(_ voice: AVSpeechSynthesisVoice?) {
         _currentVoice = voice
     }
+    
+    public func setRate(_ rate: Float) {
+        _rate = rate
+    }
+    
+    public func getCurrentVoice() -> AVSpeechSynthesisVoice? {
+        _currentVoice
+    }
+    
+    public func getRate() -> Float {
+        _rate
+    }
 }
