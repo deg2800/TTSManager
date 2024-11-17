@@ -28,7 +28,7 @@ To integrate `TTSManager` into your project, use Swift Package Manager:
 2. Go to **File > Add Packages**.
 3. Enter the repository URL for `TTSManager`:
    ```
-   https://github.com/deg2800/TTSManager
+   https://github.com/deg2800/TTSManager](https://github.com/deg2800/TTSManager.git
    ```
 4. Select the latest version and add the package.
 
